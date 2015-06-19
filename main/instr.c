@@ -1,6 +1,6 @@
 #include "stddef.h"
 #include "instr.h"
-#include "instructions/instr_header.h"
+/*#include "instructions/instr_header.h"*/
 #include "vm_read_helpers.h"
 
 instr_t instructions[] = {

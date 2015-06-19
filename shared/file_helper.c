@@ -6,8 +6,6 @@
 #include <sys/stat.h>
 #include <string.h>
 #include "err_helpers.h"
-#include "../asm/asm.h"
-#include "../asm/tools.h"
 
 off_t get_file_size(char* path)
 {

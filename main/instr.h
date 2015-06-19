@@ -22,6 +22,7 @@ int get_nb_args(char);
 int get_val_for_arg(char, vm_t*, warrior_t*, char);
 int get_reg_stored_val(char, vm_t*, warrior_t*, char);
 
+/* instructions */
 void instr_live(vm_t* vm, warrior_t* warrior);
 void instr_ld(vm_t* vm, warrior_t* warrior);
 void instr_st(vm_t* vm, warrior_t* warrior);

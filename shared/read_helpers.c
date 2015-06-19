@@ -1,14 +1,11 @@
-#include <stddef.h>
+#include <string.h>
 
 #define DEFINE_READER(T)                                                       \
   T read_##T(const char* bytes)                                                \
   {                                                                            \
-    char tmp[sizeof(T)];                                                       \
-                                                                               \
-    for (size_t i = sizeof(tmp); i--; ++bytes)                                 \
-      tmp[i] = *bytes;                                                         \
-                                                                               \
-    return *(T*)(void*)tmp;                                                    \
+    T value;                                                                   \
+    memcpy(&value, bytes, sizeof(T));                                          \
+    return value;                                                              \
   }
 
 DEFINE_READER(char)
