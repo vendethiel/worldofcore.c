@@ -25,10 +25,7 @@ instr_t instructions[] = {
 
 instr_t* find_instr(char c)
 {
-  for (int i = 0;; i++) {
-    if (!instructions[i].op) {
-      break;
-    }
+  for (int i = 0; instructions[i].op; i++) {
     if (instructions[i].op == c) {
       return &instructions[i];
     }
@@ -39,7 +36,7 @@ instr_t* find_instr(char c)
 char get_arg_type(int arg_pos, char code_byte)
 {
   code_byte = code_byte >> (8 - (arg_pos * 2));
-  return (code_byte & 0x03);
+  return code_byte & 0x03;
 }
 
 void* warrior_pc_add_idx(int val, vm_t* vm, warrior_t* warrior)
